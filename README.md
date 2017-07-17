@@ -26,7 +26,7 @@ Spreadsheets and shared docs do not have a way to restrict information.
 
 database driven information store
 ===
-* four security regions
+1.four security regions
  * admin
   * read only
   * read write
