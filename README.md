@@ -1,14 +1,17 @@
 # informationStore
 Application used to solve the problem of emailing dated spreadsheeting back and forth, or using community viewable and editable documents.
-*Current common solutions are :
- * emailing documents
+
+Current common solutions are :
+emailing documents
+---
  * versioning
  * god source - only X person can make changes
  * passwords must be in seperate document or exposed
  * hope the god source never has a hdd crash
  * ugly
  * can be information overload, too much data when you just want (for example) the username
-* shared docs
+shared docs
+---
  * fat fingering because anyone can make changes
  * access rights to shared disk
  * passwords must be in seperate document or exposed
