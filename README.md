@@ -25,6 +25,7 @@ Spreadsheets and shared docs do not have a way to restrict information.
 * You may want to share you endpoint URLs with everyone, but not the admin password.
 
 database driven information store
+===
 * four security regions
  * admin
   * read only
