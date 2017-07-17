@@ -26,13 +26,7 @@ Spreadsheets and shared docs do not have a way to restrict information.
 
 database driven information store
 ===
-1. Four security regions
- * admin
-  * read only
-  * read write
- * user
-  * read only
-  * write
+* Custom security levels
 * database can be stored in HA environments like CloudFoundry
 * Backups can be automated and pipelined into regular environmental backups
 * custom UIs
