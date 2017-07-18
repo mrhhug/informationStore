@@ -30,3 +30,4 @@ database driven information store
 * database can be stored in HA environments like CloudFoundry
 * Backups can be automated and pipelined into regular environmental backups
 * custom UIs
+* stable
