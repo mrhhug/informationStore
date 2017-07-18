@@ -7,6 +7,7 @@ import java.net.URLDecoder;
 import java.sql.SQLException;
 import java.util.Map;
 import java.util.Set;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,7 +27,11 @@ public class Controller {
 	this.sqlCRUD = new MySqlCRUD();
 	sqlCRUD.init();
     }
-    
+    /**
+     * Get projects
+     * 
+     * @return json string of all projects
+     */
     @GetMapping("api")
     public String api() {
 	StringBuilder ret = new StringBuilder();
@@ -44,6 +49,12 @@ public class Controller {
 	return ret.toString();
     }
     
+    /**
+     * Get environments for project
+     * 
+     * @param project
+     * @return json string of project environments
+     */
     @GetMapping("api/{project}")
     public String apiProject(@PathVariable String project) {
 	StringBuilder ret = new StringBuilder();
@@ -62,6 +73,14 @@ public class Controller {
 	return ret.toString();
     }
     
+    /**
+     * Get key/value pairs for project environment
+     * 
+     * @param project
+     * @param environment
+     * @return json string of project environment key/value pairs
+     * @throws SQLException 
+     */
     @GetMapping("api/{project}/{environment}")
     public String apiProjectEnvironment(@PathVariable String project, @PathVariable String environment) throws SQLException {
 	StringBuilder ret = new StringBuilder();
@@ -97,7 +116,7 @@ public class Controller {
 return "";
     }
     
-    @PutMapping("api/deleteProject/{project}")
+    @DeleteMapping("api/deleteProject/{project}")
     public String apideleteProject(@PathVariable String project) throws SQLException {
 	sqlCRUD.deleteTable(project);
 	return "DELETED project : " + project + "\n";

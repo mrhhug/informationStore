@@ -19,17 +19,17 @@ public class MySqlCRUD {
     private final String db;
     private final String user;
     private final String pass;
-    private final String idVAR;
-    private final String environmentVAR;
+    private final String id;
+    private final String environment;
 
     public MySqlCRUD() {
 	this.url = "jdbc:mysql://localhost:3306";
 	this.db = "MicahelInformationStore";
 	this.user = "root";
 	this.pass = "support1";
-	this.idVAR = "ID";
+	this.id = "ID";
 	//this should be the primary key, we know it will be unique
-	this.environmentVAR = "environmentVAR";
+	this.environment = "environment";
     }
     
     public void init() throws SQLException {
@@ -56,12 +56,12 @@ public class MySqlCRUD {
     public Set<String> queryProjectEnvironments(String myProject) throws SQLException {
 	Set<String> ret = new HashSet<>();
 	Connection c = DriverManager.getConnection(url+"/"+db, user, pass);
-	String statement = "SELECT " + environmentVAR + " FROM " + myProject;
+	String statement = "SELECT " + environment + " FROM " + myProject;
 	PreparedStatement prepareStatement = c.prepareStatement(statement);
 	prepareStatement.execute();
 	ResultSet rs = prepareStatement.getResultSet();
 	while(rs.next()) {
-	    ret.add(rs.getString(environmentVAR));
+	    ret.add(rs.getString(environment));
 	}
 	c.close();
 	return ret;
@@ -81,7 +81,7 @@ public class MySqlCRUD {
 	columnsReadyToBeQueried.deleteCharAt(columnsReadyToBeQueried.lastIndexOf(", "));
 	
 	Connection c = DriverManager.getConnection(url+"/"+db, user, pass);
-	String statement = "SELECT " + columnsReadyToBeQueried.toString() + "FROM " + myProject + " where " + environmentVAR + "='" + myEnvironment + "'";
+	String statement = "SELECT " + columnsReadyToBeQueried.toString() + "FROM " + myProject + " where " + environment + "='" + myEnvironment + "'";
 	PreparedStatement prepareStatement = c.prepareStatement(statement);
 	prepareStatement.execute();
 	ResultSet rs = prepareStatement.getResultSet();
@@ -97,7 +97,7 @@ public class MySqlCRUD {
 	Connection c = DriverManager.getConnection(url+"/"+db, user, pass);
 	StringBuilder statement = new StringBuilder();
 	statement.append("CREATE TABLE ").append(par.project).append(" ");
-	statement.append("(").append(idVAR).append(" int NOT NULL, PRIMARY KEY (ID), ");
+	statement.append("(").append(id).append(" int NOT NULL, PRIMARY KEY (ID), ");
 	statement.append("environmentVAR TEXT NOT NULL, ");
 	for( String i : par.keys) {
 	    statement.append(i).append(" TEXT,");
@@ -136,8 +136,8 @@ public class MySqlCRUD {
 	}
 	c.close();
 	//like showing someone your underwear, no one wants to see this... unless they know you ;)
-	ret.remove(idVAR);
-	ret.remove(environmentVAR);
+	ret.remove(id);
+	ret.remove(environment);
 	return ret;
     }
 }
