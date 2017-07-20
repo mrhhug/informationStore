@@ -1,4 +1,4 @@
-package com.webreadLLC.informationStore.CRUD;
+package com.webreadLLC.informationStore.crud;
 
 /**
  * @author michael

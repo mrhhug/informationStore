@@ -1,4 +1,4 @@
-package gsonDefinitions;
+package com.webreadLLC.informationStore.gsonDefinitions;
 
 /**
  * @author michael
