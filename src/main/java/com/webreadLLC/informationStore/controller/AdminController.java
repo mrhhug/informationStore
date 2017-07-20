@@ -1,51 +1,55 @@
 package com.webreadLLC.informationStore.controller;
 
-import java.sql.SQLException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import com.webreadLLC.informationStore.CRUD.CRUD;
 
 /**
  * @author michael
  */
 
 @RestController("api/admin/")
-public class AdminController {
+public class AdminController extends AbstractController {
+
+    public AdminController(CRUD crud) {
+	super(crud);
+    }
     
-    @GetMapping("api/admin/mysqldump/")
-    public String apiAdminMysqldump() throws SQLException {
+    @GetMapping("api/admin/dump/")
+    public String apiAdminDump() {
 	//TODO
 	return "";
     }
     
-    @GetMapping("api/admin/mysqldump/{project}/")
-    public String apiAdminMysqldumpProject(@PathVariable String project) throws SQLException {
+    @GetMapping("api/admin/dump/{project}/")
+    public String apiAdminDumpProject(@PathVariable String project) {
 	//TODO
 	return "";
     }
     
-    @GetMapping("api/admin/mysqldump/{project}/{environment}/")
-    public String apiAdminMysqldumpProjectEnvironment(@PathVariable String project) throws SQLException {
+    @GetMapping("api/admin/dump/{project}/{environment}/")
+    public String apiAdminDumpProjectEnvironment(@PathVariable String project) {
 	//TODO
 	return "";
     }
     
-    @PostMapping("api/admin/mysqlinsert/")
-    public String apiAdminMysqlinsert(@RequestBody String par) {
+    @PostMapping("api/admin/fill/")
+    public String apiAdminFill(@RequestBody String par) {
 	//TODO
 	return "";
     }
     
-    @PostMapping("api/admin/mysqlinsert/{project}/")
-    public String apiAdminMysqlinsertProject(@RequestBody String par) {
+    @PostMapping("api/admin/fill/{project}/")
+    public String apiAdminFillProject(@RequestBody String par) {
 	//TODO
 	return "";
     }
     
-    @PostMapping("api/admin/mysqlinsert/{project}/{environment}/")
-    public String apiAdminMysqlinsertProjectEnvironment(@RequestBody String par) {
+    @PostMapping("api/admin/fill/{project}/{environment}/")
+    public String apiAdminFillProjectEnvironment(@RequestBody String par) {
 	//TODO
 	return "";
     }
