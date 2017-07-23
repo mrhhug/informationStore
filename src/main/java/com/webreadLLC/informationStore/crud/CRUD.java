@@ -41,7 +41,7 @@ public interface CRUD {
     //DELETE
     //public boolean DeleteAll();
     
-    public int DeleteProject(Project p) throws SQLException;
+    public boolean DeleteProject(Project p) throws SQLException;
     
     public int DeleteProjectEnvironment(ProjectEnvironment pe) throws SQLException;
     

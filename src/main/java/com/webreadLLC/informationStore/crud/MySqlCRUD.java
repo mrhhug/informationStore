@@ -178,12 +178,12 @@ public class MySqlCRUD implements CRUD{
     }
 
     @Override
-    public int DeleteProject(Project p) throws SQLException {
+    public boolean DeleteProject(Project p) throws SQLException {
 	StringBuilder statement = new StringBuilder();
 	statement.append("DROP TABLE ");
 	statement.append(p.project);
 	int result = updateMySQL(statement.toString());
-	return result;
+	return 0 == result;
     }
 
     @Override
