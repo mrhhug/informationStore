@@ -6,9 +6,10 @@ import java.util.Set;
  * @author michael
  */
 public class ProjectEnvironments extends Project {
-    Set<String> environments;
+    public Set<String> environments;
 
-    public ProjectEnvironments(String p) {
+    public ProjectEnvironments(String p, Set<String> e) {
 	super(p);
+	this.environments = e;
     }
 }

@@ -1,23 +1,18 @@
-package com.webreadLLC.informationStore.controller;
+package com.webreadLLC.informationStore.main;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.webreadLLC.informationStore.CRUD.CRUD;
 
 /**
  * @author michael
  */
 
 @RestController("api/admin/")
-public class AdminController extends AbstractController {
+public class AdminController {
 
-    public AdminController(CRUD crud) {
-	super(crud);
-    }
-    
     @GetMapping("api/admin/dump/")
     public String apiAdminDump() {
 	//TODO

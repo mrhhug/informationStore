@@ -1,14 +1,14 @@
 package com.webreadLLC.informationStore.gsonDefinitions;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * @author michael
  */
 public class ProjectKeys extends Project {
-    Set<String> keys;
+    public List<String> keys;
 
-    public ProjectKeys(String p, Set<String> k) {
+    public ProjectKeys(String p, List<String> k) {
 	super(p);
 	this.keys = k;
     }
