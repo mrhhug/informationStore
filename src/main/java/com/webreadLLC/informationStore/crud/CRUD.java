@@ -17,6 +17,9 @@ import java.sql.SQLException;
 
 public interface CRUD {
     
+    //init test
+    public CRUD initTest() throws SQLException;
+    
     //GET
     public Projects GetProjects() throws SQLException;
     

@@ -43,6 +43,14 @@ public class MySqlCRUD implements CRUD{
     }
 
     @Override
+    public CRUD initTest() throws SQLException {
+        Connection conn = DriverManager.getConnection(url,user, pass);
+	PreparedStatement prepareStatement = conn.prepareStatement("CREATE DATABASE IF NOT EXISTS " + db);
+	prepareStatement.executeUpdate();
+        return this;
+    }
+    
+    @Override
     public Projects GetProjects() throws SQLException {
 	Set<String> ret = new HashSet<>();
 	ResultSet rs = executeMySQL("SELECT table_name FROM information_schema.tables where table_schema='" + db + "';");
