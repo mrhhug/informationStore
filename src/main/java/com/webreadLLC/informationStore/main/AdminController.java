@@ -10,40 +10,40 @@ import org.springframework.web.bind.annotation.RestController;
  * @author michael
  */
 
-@RestController("api/admin/")
+@RestController("api/admin")
 public class AdminController {
 
-    @GetMapping("api/admin/dump/")
+    @GetMapping("api/admin/dump")
     public String apiAdminDump() {
 	//TODO
 	return "";
     }
     
-    @GetMapping("api/admin/dump/{project}/")
+    @GetMapping("api/admin/dump/{project}")
     public String apiAdminDumpProject(@PathVariable String project) {
 	//TODO
 	return "";
     }
     
-    @GetMapping("api/admin/dump/{project}/{environment}/")
+    @GetMapping("api/admin/dump/{project}/{environment}")
     public String apiAdminDumpProjectEnvironment(@PathVariable String project) {
 	//TODO
 	return "";
     }
     
-    @PostMapping("api/admin/fill/")
+    @PostMapping("api/admin/fill")
     public String apiAdminFill(@RequestBody String par) {
 	//TODO
 	return "";
     }
     
-    @PostMapping("api/admin/fill/{project}/")
+    @PostMapping("api/admin/fill/{project}")
     public String apiAdminFillProject(@RequestBody String par) {
 	//TODO
 	return "";
     }
     
-    @PostMapping("api/admin/fill/{project}/{environment}/")
+    @PostMapping("api/admin/fill/{project}/{environment}")
     public String apiAdminFillProjectEnvironment(@RequestBody String par) {
 	//TODO
 	return "";

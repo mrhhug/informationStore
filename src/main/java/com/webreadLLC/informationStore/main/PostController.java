@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
  * @author michael
  */
 
-@RestController("/api/post/")
+@RestController("/api/post")
 public class PostController {
 
-    @PostMapping("/api/post/{project}/")
+    @PostMapping("/api/post/{project}")
     public String apiPostProject(@PathVariable String project, @RequestBody String ks) throws SQLException {
 	String ret = "FAIL";
 	if(0 == crud.PostProject(new ProjectKeys(project, new Gson().fromJson(ks, List.class)))) {
@@ -28,7 +28,7 @@ public class PostController {
 	return ret;
     }
     
-    @PostMapping("/api/post/{project}/{environment}/")
+    @PostMapping("/api/post/{project}/{environment}")
     public String apiPostProjectEnvironmentKeyValues(@PathVariable String project, @PathVariable String environment, @RequestBody String ks) throws SQLException {
 	String ret = "No Content";
 	if(1 == crud.PostProjectEnvironmentKeyValues(new ProjectEnvironmentKeyValues(project, environment, new Gson().fromJson(ks, Map.class)))) {

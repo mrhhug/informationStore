@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @author michael
  */
-@RestController("/api/delete/")
+@RestController("/api/delete")
 public class DeleteController {
 
     //too dangerous
@@ -23,7 +23,7 @@ public class DeleteController {
 //	return ret;
 //    }
     
-    @DeleteMapping("/api/delete/{project}/")
+    @DeleteMapping("/api/delete/{project}")
     public String apiDeleteProject(@PathVariable String project) throws SQLException {
 	String ret = "No Content";
 	if(crud.DeleteProject(new Project(project))) {
@@ -34,7 +34,7 @@ public class DeleteController {
     
     //there is no way to delete a key from a project
     
-    @DeleteMapping("/api/delete/{project}/{environment}/")
+    @DeleteMapping("/api/delete/{project}/{environment}")
     public String apiDeleteProjectEnvironment(@PathVariable String project, @PathVariable String environment) throws SQLException {
 	//untested 
 	return null;

@@ -14,15 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @author michael
  */
-@RestController("/api/get/")
+@RestController("/api/get")
 public class GetController {
     
-    @GetMapping("/api/get/")
+    @GetMapping("/api/get")
     public String apiGetProjects() throws SQLException {
 	return new Gson().toJson(crud.GetProjects());
     }
     
-    @GetMapping("/api/get/{project}/")
+    @GetMapping("/api/get/{project}")
     public String apiGetProjectEnvironments(@PathVariable String project) throws SQLException {
 	return new Gson().toJson(crud.GetProjectEnvironments(new Project(project)));
     }
@@ -32,12 +32,12 @@ public class GetController {
 	return new Gson().toJson(crud.GetProjectKeys(new Project(project)));
     }
     
-    @GetMapping("/api/get/{project}/{environment}/")
+    @GetMapping("/api/get/{project}/{environment}")
     public String apiGetProjectEnvironmentKeyValues(@PathVariable String project, @PathVariable String environment) throws SQLException {
 	return new Gson().toJson(crud.GetProjectEnvironmentKeyValues(new ProjectEnvironment(project,environment)));
     }
     
-    @GetMapping("/api/get/{project}/{environment}/{key}/")
+    @GetMapping("/api/get/{project}/{environment}/{key}")
     public String apiGetProjectEnvironmentKeyValue(@PathVariable String project, @PathVariable String environment, @PathVariable String key) throws SQLException {
 	return new Gson().toJson(crud.GetProjectEnvironmentKeyValue(new ProjectEnvironmentKey(project,environment,key)));
     }

@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
  * @author michael
  */
 
-@RestController("api/put/")
+@RestController("api/put")
 public class PutController {
     
-    @PutMapping("api/put/{project}/{environment}/")
+    @PutMapping("api/put/{project}/{environment}")
     public String apiPutProjectEnvironment(@PathVariable String project, @PathVariable String environment) throws SQLException {
 	String ret = "No Content";
 	if(crud.PutProjectEnvironment(new ProjectEnvironment(project, environment))) {
@@ -24,7 +24,7 @@ public class PutController {
 	return ret;
     }
     
-    @PutMapping("api/put/{project}/{environment}/{key}/{value}/")
+    @PutMapping("api/put/{project}/{environment}/{key}/{value}")
     public String apiPutProjectEnvironmentKeyValue(@PathVariable String project, @PathVariable String environment, @PathVariable String key, @PathVariable String value) throws SQLException {
 	String ret = "No Content";
 	if(crud.PutProjectEnvironmentKeyValue(new ProjectEnvironmentKeyValue(project, environment, key, value))) {
