@@ -1,4 +1,4 @@
-package com.webreadLLC.informationStore.main;
+package com.webreadLLC.informationStore.controller;
 
 import com.google.gson.Gson;
 import com.webreadLLC.informationStore.gsonDefinitions.Project;

@@ -5,8 +5,9 @@ import com.webreadLLC.informationStore.crud.MySqlCRUD;
 import java.sql.SQLException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication
+@SpringBootApplication @ComponentScan({"com.webreadLLC.informationStore.controller"})
 public class InformationStoreApplication {
     
     public static CRUD crud ;

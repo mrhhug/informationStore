@@ -1,4 +1,4 @@
-package com.webreadLLC.informationStore.main;
+package com.webreadLLC.informationStore.controller;
 
 import com.webreadLLC.informationStore.gsonDefinitions.Project;
 import static com.webreadLLC.informationStore.main.InformationStoreApplication.crud;
